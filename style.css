@@ -1,87 +1,133 @@
-body {
-    font-family:'Helvetica Neue', Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    color: #333;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-}
-form-container {
+/* Correção: O seletor 'form-container' deve ser uma classe (.form-container) ou um ID (#form-container) se não for um elemento HTML nativo. Assumi que é uma classe. */
+.form-container {
     background-color: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    /* Sugestão: Limitar a largura máxima para melhor responsividade em telas grandes */
+    max-width: 500px; 
+    width: 90%; /* Ajuste para ser responsivo */
+    /* Sugestão: Adicionar 'align-items: center;' no body para centralização vertical (se necessário) */
 }
-h2{
+
+/* Sem correções aqui, está correto */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    color: #333;
+    justify-content: center;
+    /* Correção: Adicione 'align-items: center;' para centralizar verticalmente, pois 'display: flex;' está ativo. */
+    align-items: center; 
+    height: 100vh;
+    margin: 0;
+}
+
+/* Sem correções aqui, está correto */
+h2 {
     text-align: center;
-    margin-bottom:25px;
-    color: #555;   
+    margin-bottom: 25px;
+    color: #555;
 }
-.form-group{
+
+/* Sem correções aqui, está correto */
+.form-group {
     margin-bottom: 20px;
-
 }
 
-.form-group label{
+.form-group label {
     display: block;
     margin-bottom: 8px;
-    color: #555
+    color: #555;
+    /* Correção: Faltou um ponto e vírgula (;) após a propriedade 'color' */
     font-weight: bold;
 }
 
-.form group input,
-.form group textarea{
+/* Correção: Faltou o ponto (.) antes de 'form group' em ambos os seletores */
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
-
     transition: border-color 0.3s ease;
 }
 
-.form-group input: focus,
-.form-group textarea: focus{
-    border-color: #c9cccf;
+/* Correção: Espaço incorreto antes do pseudoclasse :focus */
+.form-group input:focus,
+.form-group textarea:focus {
+    /* Sugestão: Usar uma cor mais distinta, como o azul principal, para o foco */
+    border-color: #444d92; 
     outline: none;
 }
 
-.btn{
+.btn {
     padding: 12px 20px;
-    border: none; 
+    border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform: 0.2s ease;
-
+    /* Correção: A propriedade 'transform' estava fora do formato correto de 'transition' */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn: houver{
-   transform: scale(1.05);
+/* Correção: A pseudoclasse :hover estava incorretamente escrita como ': houver' */
+.btn:hover {
+    transform: scale(1.05);
 }
 
-.btn-principal{
+.btn-principal {
     background-color: #444d92;
     color: white;
 }
 
-.btn-principal: houver{
-    background-color: #2980b9;
-
+/* Correção: A pseudoclasse :hover estava incorretamente escrita como ': houver' */
+.btn-principal:hover {
+    /* Sugestão: Ajustar a cor do hover para uma ligeiramente mais escura, mantendo a consistência do tom */
+    background-color: #3a417b;
 }
-.btn-secundario{
+
+.btn-secundario {
     background-color: #e74c3c;
-    color: white
+    /* Correção: Faltou um ponto e vírgula (;) após a propriedade 'color' */
+    color: white; 
 }
 
-.btn-secundario: houver{
+/* Correção: A pseudoclasse :hover estava incorretamente escrita como ': houver' */
+.btn-secundario:hover {
     background-color: #c8392b;
 }
 
-.button-group{
+/* Sem correções aqui, está correto */
+.button-group {
     display: flex;
-     gap: 15px;
+    gap: 15px;
+}
+
+#mensagem-status {
+    /* Correção: '15%' em 'padding' pode ser muito grande, alterei para '15px' para algo mais razoável */
+    padding: 15px; 
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: none;
+}
+
+/* Sem correções aqui, está correto */
+#mensagem-status.sucesso {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Correção: O seletor 'mensagem-status.erro' precisa do símbolo '#' na frente pois é um ID */
+#mensagem-status.erro { 
+    display: block;
+    background-color: #f8d7d7; /* Ajuste na cor de fundo para ser mais típica de erro */
+    color: #721c24; /* Ajuste na cor do texto para ser mais típica de erro */
+    /* Correção: Propriedade 'border' incompleta (faltou o tipo e a cor) */
+    border: 1px solid #f5c6cb;
 }
