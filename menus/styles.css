@@ -39,3 +39,12 @@ body{
 .nav-links a:hover{
     background-color: #555;
 }
+
+.nav-links a.link{
+    background-color: #e67e22;
+}
+
+.conteudo{
+  padding: 20px;
+  text-align: center;
+}
